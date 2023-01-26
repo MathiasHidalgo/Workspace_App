@@ -6,10 +6,11 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 
 // Initializations
-const app = express()
+const app = express();
+require('./db');
 
 // Settings
-const port = process.env.PORT || 3000;
+app.set('port', process.env.PORT || 3000);
 
 app.set('views', path.join(__dirname, 'views'));
 
@@ -40,9 +41,10 @@ app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 
 // Static Files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Server is listening 
 
-app.listen(() => {
-    console.log('Server is listening on port', port)
+app.listen(app.get('port'), () => {
+    console.log('Server is listening on port', app.get('port'));
 })
