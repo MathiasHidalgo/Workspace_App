@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/users/signin', (req, res) => {
-    res.send('Signin fro your account');
+    res.render('users/signin');
 })
 
 router.get('/users/signup', (req, res) => {
-    res.send('Completing your registration');
+    res.render('users/signup');
 })
 
 module.exports = router;
