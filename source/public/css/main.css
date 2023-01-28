@@ -1,3 +1,16 @@
+a{
+    text-decoration: none;
+}
+
+p{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
 body {
     background:  #edc0bf;
     background: linear-gradient(90deg, #edc0bf 0, #c4caef 58%);
@@ -9,13 +22,39 @@ body {
     margin: 0;
 }
 
-.homepage {
-    width: 400px;
+.homepage, .about {
+    width: 50%;
     height: auto;
     padding: 2rem;
-    margin: 0;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, .7);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    margin: auto;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
 }
+
+.button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 14px;
+    margin: 0px 35%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+  
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+     background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:focus{
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
