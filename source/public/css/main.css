@@ -1,3 +1,8 @@
+header{
+    text-align: center;
+    font-size: 1.7rem;
+}
+
 a{
     text-decoration: none;
 }
@@ -7,7 +12,7 @@ p{
     text-align: center;
 }
 
-h1 {
+h1{
     text-align: center;
 }
 
@@ -22,7 +27,7 @@ body {
     margin: 0;
 }
 
-.homepage, .about {
+.homepage, .about, .create-note {
     width: 50%;
     height: auto;
     padding: 2rem;
@@ -34,6 +39,32 @@ body {
     border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
+.notes-form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes-form > div {
+    width: 90%;
+    padding: 10px;
+}
+
+.notes-form > div:first-child {
+    margin-right: 20px;
+}
+
+.notes-title, .notes-description {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0.4px 0.4px 6px 1px #606470;
+}
+
 .button{
     display: flex;
     flex-direction: column;
@@ -43,10 +74,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
     border-radius: 6px;
     border: none;
-  
     color: #fff;
     background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
-     background-origin: border-box;
+    background-origin: border-box;
     box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
     user-select: none;
     -webkit-user-select: none;
