@@ -37,25 +37,21 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
+    box-shadow: 0.4px 0.4px 9px 1px #606470;
 }
 
 .notes-form {
     min-height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .notes-form > div {
-    width: 90%;
     padding: 10px;
-}
-
-.notes-form > div:first-child {
-    margin-right: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .notes-title, .notes-description {
+    width: 70%;
     padding: 0.5rem;
     padding-left: 1rem;
     font-size: 1.2rem;
@@ -63,7 +59,9 @@ body {
     background: white;
     border-radius: 2rem;
     box-shadow: 0.4px 0.4px 6px 1px #606470;
+    font-family: sans-serif;
 }
+
 
 .button{
     display: flex;
@@ -81,6 +79,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    cursor: pointer;
 }
 
 .button:focus{
@@ -88,3 +87,19 @@ body {
     outline: 0;
 }
 
+.notes-button {
+    font-size: 17px;
+    width: 25%;
+    padding: 8px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+}
