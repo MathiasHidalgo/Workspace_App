@@ -33,8 +33,10 @@ router.post('/notes/new-note', async (req, res) => {
 
 })
 
-router.get('/notes', (req, res) => {
-    res.send('notes from the db of your account');
+router.get('/notes', async (req, res) => {
+    const notes = await Note.find().lean();
+    console.log(notes);
+    res.render('notes/all-notes', { notes });
 })
 
 module.exports = router;

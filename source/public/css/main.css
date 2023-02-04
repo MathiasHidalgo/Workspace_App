@@ -16,6 +16,11 @@ h1{
     text-align: center;
 }
 
+h4 {
+    color: black;
+    text-align: center;
+}
+
 body {
     background:  #edc0bf;
     background: linear-gradient(90deg, #edc0bf 0, #c4caef 58%);
@@ -27,7 +32,7 @@ body {
     margin: 0px 0px 90px 0px;
 }
 
-.homepage, .about, .create-note {
+.homepage, .about, .create-note{
     width: 50%;
     height: auto;
     padding: 2rem;
@@ -106,7 +111,7 @@ body {
 
 .alert {
     background-color: #dc2f2f;
-    color: #c4caef;
+    color: #fff;
     padding: 8px;
     margin-bottom: 5px;
     display: flex;
@@ -128,4 +133,11 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
     cursor: pointer;
+}
+
+.all-notes-body {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    width: 25%;
 }
