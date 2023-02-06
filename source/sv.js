@@ -1,8 +1,8 @@
 // Modules
 const express = require('express');
-const path = require('path');
-const exphbs = require('express-handlebars');
-const methodOverride = require('method-override');
+const path = require('path'); // To navigate trough folders
+const exphbs = require('express-handlebars'); // Handlebars module 
+const methodOverride = require('method-override'); // 
 const session = require('express-session');
 
 // Initializations
@@ -10,16 +10,16 @@ const app = express();
 require('./db');
 
 // Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3000); // if we receive a port, put it, else use 3000 as port number    
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views')); // we said that views folder is here in the project
 
 app.engine('.hbs', exphbs.engine({
     extname: '.hbs',
     defaultLayout:'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials')
-}));
+})); // app.engine to use handlebars as template for the websie, we specify '.hbs' and then define the variables
 
 app.set('view engine', '.hbs');
 
@@ -36,12 +36,12 @@ app.use(session({
 // Global Variables
 
 // Routes 
-app.use(require('./routes/home'));
-app.use(require('./routes/notes'));
-app.use(require('./routes/users'));
+app.use(require('./routes/home')); // route to see the home page and the about page
+app.use(require('./routes/notes')); // routes to add notes and see them
+app.use(require('./routes/users')); // route to register your new username and login if you alredy have one
 
 // Static Files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // regardless of the template path, we need to add logic and styles, and we'll store it in public folder accesing to it
 
 // Server is listening 
 

@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header{
     text-align: center;
     font-size: 1.7rem;
@@ -7,17 +13,11 @@ a{
     text-decoration: none;
 }
 
-p{
-    margin-bottom: 25px;
+p {
     text-align: center;
 }
 
 h1{
-    text-align: center;
-}
-
-h4 {
-    color: black;
     text-align: center;
 }
 
@@ -32,6 +32,12 @@ body {
     margin: 0px 0px 90px 0px;
 }
 
+.container h3, h4, p {
+    color: black;
+    text-align: center;
+    margin: 30px 0px;
+}
+
 .homepage, .about, .create-note{
     width: 50%;
     height: auto;
@@ -39,10 +45,10 @@ body {
     margin: auto;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
     border: 1px solid rgba(209, 213, 219, 0.3);
-    box-shadow: 0.4px 0.4px 9px 1px #606470;
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
 }
 
 .notes-form {
@@ -62,8 +68,8 @@ body {
     font-size: 1.2rem;
     border: none;
     background: white;
-    border-radius: 2rem;
-    box-shadow: 0.4px 0.4px 6px 1px #606470;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
     font-family: sans-serif;
 }
 
@@ -102,37 +108,71 @@ body {
     color: #fff;
     background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
     background-origin: border-box;
-    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     cursor: pointer;
 }
 
-.alert {
-    background-color: #dc2f2f;
-    color: #fff;
-    padding: 8px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
+#alert {
+    background-color: #fd5959;
+    color: #000;
+    padding: 20px 40px;
+    min-width: 420px;
+    align-items: center;
+    margin-bottom: 8px;
     font-size: 18px;
-    border-radius: 25px;
+    border-radius: 15px;
+    border-left: 8px solid #dc2f2f;
 }
 
-.close-alert {
-    font-size: 20px;
-    width: 3%;
-    padding: 8px 8px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-    border: none;
-    color: #45171d;
-    background: none;
-    background-origin: border-box;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+.show {
+    animation: show_slide 0.5s ease forwards;
+}
+
+@keyframes show_slide {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-10%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+#alert .fa-exclamation-circle {
+    color : #a21232;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+#alert .msg {
+    padding: 0 20px;
+    font-size: 18px;
+    color: #a21232;
+}
+
+#alert .close-btn {
+    padding: 10px;
+    background: #f83e4b;
+    position: relative;
+    left: 800px;
     cursor: pointer;
+}
+
+.close-btn .fa-times {
+    color: #a21232;
+    font-size: 22px;
 }
 
 .all-notes-body {

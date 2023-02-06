@@ -1,17 +1,29 @@
 {{#each errors}}
-    <div class="alert" role="alert">
-        {{text}}
-        <button type="button" class="close-alert" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+    <div id="alert" class="show">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">{{text}}</span>
+        <span onclick="closeAlert()" class="close-btn">
+            <span class="fas fa-times"></span>
+        </span>
     </div>
+
+    <script>
+        function closeAlert() {
+            const alert = document.getElementById("alert");
+            alert.removeAttribute("show");
+            alert.setAttribute("hide");
+        }
+    </script>
 {{/each}}
 
 <header class="notes-header">
     <h3>Create a Task</h3>
 </header>
 
+
+<!--Creating the form for adding a new task-->
 <div class="create-note">
+    <!--Form with a method post and an action that with the data will be on /notes/new-note route-->
     <form action="/notes/new-note" method="POST" class="notes-form">
         <div>
             <input type="text" name="title" placeholder="enter your title task" class="notes-title">
@@ -23,4 +35,5 @@
             <button class="notes-button" type="submit">Create Task</button>
         </div>
     </form>
+
 </div>
