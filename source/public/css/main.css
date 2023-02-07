@@ -176,8 +176,19 @@ body {
 }
 
 .all-notes-body {
-    background-color: #fff;
-    padding: 30px;
-    margin: 20px;
-    width: 25%;
+    /* width: 50%;
+    height: auto;
+    padding: 1rem;
+    margin: auto;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7); */
+    background: #fcff82;
+    padding: 10px;
+    width: 35%;
+    align-items: center;
+    margin: 10px;
 }
