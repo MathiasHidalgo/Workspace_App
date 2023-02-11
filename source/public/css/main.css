@@ -130,34 +130,6 @@ body {
     border-left: 8px solid #dc2f2f;
 }
 
-.show {
-    animation: show_slide 0.5s ease forwards;
-}
-
-@keyframes show_slide {
-    0% {
-        transform: translateX(100%);
-    }
-    40% {
-        transform: translateX(-10%);
-    }
-    80% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-10px);
-    }
-}
-
-.hide {
-    display: none;
-}
-
-#alert .fa-exclamation-circle {
-    color : #a21232;
-    margin-right: 20px;
-    font-size: 25px;
-}
 
 #alert .msg {
     padding: 0 20px;
