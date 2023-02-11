@@ -1,10 +1,8 @@
-<header class="notes-header">
-    <h2>Edit a Task</h2>
-</header>
-
-
 <!--Creating the form for adding a new task-->
-<div class="create-note">
+<div class="edit-note">
+    <header class="notes-header">
+    <h2>Edit a Task</h2>
+    </header>
     <!--Form with a method post and an action that with the data will be on /notes/new-note route-->
     <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST" class="notes-form">
         <input type="hidden" name="_method" value="PUT">

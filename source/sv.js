@@ -2,8 +2,12 @@
 const express = require('express');
 const path = require('path'); // To navigate trough folders
 const exphbs = require('express-handlebars'); // Handlebars module 
+const Handlebars = require('handlebars'); 
 const methodOverride = require('method-override'); // 
 const session = require('express-session');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+
+
 
 // Initializations
 const app = express();
@@ -18,7 +22,8 @@ app.engine('.hbs', exphbs.engine({
     extname: '.hbs',
     defaultLayout:'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials')
+    partialsDir: path.join(app.get('views'), 'partials'),
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
 })); // app.engine to use handlebars as template for the websie, we specify '.hbs' and then define the variables
 
 app.set('view engine', '.hbs');
