@@ -51,5 +51,5 @@ app.use(express.static(path.join(__dirname, 'public'))); // regardless of the te
 // Server is listening 
 
 app.listen(app.get('port'), () => {
-    console.log('Server is listening on port', app.get('port'));
+    console.log('Server is on port ', app.get('port'));
 })
