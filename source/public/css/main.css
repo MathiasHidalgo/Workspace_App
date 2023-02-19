@@ -118,7 +118,7 @@ body {
     cursor: pointer;
 }
 
-#alert {
+.alert {
     background-color: #fd5959;
     color: #000;
     padding: 20px 40px;
@@ -131,23 +131,27 @@ body {
 }
 
 
-#alert .msg {
+.alert {
     padding: 0 20px;
     font-size: 18px;
     color: #a21232;
 }
 
-#alert .close-btn {
+.alert {
     padding: 10px;
     background: #f83e4b;
     position: relative;
-    left: 800px;
-    cursor: pointer;
 }
 
-.close-btn .fa-times {
-    color: #a21232;
-    font-size: 22px;
+.close{
+    background-color: #a21232;
+    padding: 7px;
+    border: none;
+    color: #f83e4b;
+    border-radius: 7px;
+    position: relative;
+    left: 78%;
+    cursor: pointer;
 }
 
 .all-notes-container{
@@ -182,3 +186,5 @@ body {
     touch-action: manipulation;
     cursor: pointer;
 }
+
+

@@ -42,6 +42,7 @@ router.post('/notes/new-note', async (req, res) => {
 
 })
 
+//get all the notes in the route /notes and then store the different notes in a constant variable called notes sorted and ordered by the date descrecing 
 router.get('/notes', async (req, res) => {
     const notes = await Note.find().lean().sort({date: 'desc'});
     console.log(notes);
