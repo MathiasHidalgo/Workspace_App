@@ -81,8 +81,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 8px 14px;
-    margin: 0px 35%;
+    margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
     border-radius: 6px;
     border: none;
@@ -118,7 +119,7 @@ body {
     cursor: pointer;
 }
 
-.alert {
+.alert-danger {
     background-color: #fd5959;
     color: #000;
     padding: 20px 40px;
@@ -131,19 +132,19 @@ body {
 }
 
 
-.alert {
+.alert-danger {
     padding: 0 20px;
     font-size: 18px;
     color: #a21232;
 }
 
-.alert {
+.alert-danger {
     padding: 10px;
     background: #f83e4b;
     position: relative;
 }
 
-.close{
+.close-danger{
     background-color: #a21232;
     padding: 7px;
     border: none;
@@ -155,36 +156,49 @@ body {
 }
 
 .all-notes-container{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
     align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
 }
 
 .all-notes-body {
     background: #fcff82;
     padding: 20px;
-    width: 25%;
-    margin: 10px;
+    width: 75%;
+    margin: 10px 2px 4px 1px;
 }
 
 .all-notes-delete-button {
-    background: linear-gradient(180deg, #f83e4b 0%, #a21232 100%);
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+ 
+}
+
+.no-notes {
+    display: grid;
+    justify-content: center;
     align-items: center;
-    padding: 8px 14px;
-    margin: 0px 35%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-    border-radius: 6px;
-    border: none;
-    color: #fff;
-    background-origin: border-box;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
     box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    cursor: pointer;
+}
+
+.no-notes a {
+    width: 100%;
 }
 
 
