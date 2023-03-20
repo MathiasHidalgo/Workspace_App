@@ -10,10 +10,10 @@
                 <button class="all-notes-delete-button" type="submit">Delete</button>
             </form>
         </div>
-        <h1>Hello {{user.name}}</h1>
         <a href="/notes/add" class="new-notes-button">Create a new one</a>
         {{else}}
             <div class="no-notes">
+                <h1>Hello {{user.name}}</h1>
                 <b>There are not notes yet</b>
                 <a href="/notes/add" class="button">Create One!</a>
             </div>

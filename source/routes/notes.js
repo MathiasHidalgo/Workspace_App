@@ -35,6 +35,7 @@ router.post("/notes/new-note", isAuthenticated, async (req, res) => {
   // Else just store the notes form document, creating a new note with the model class created and sotre in a constant
   else {
     const newNote = new Note({ title, description });
+    newNote.user = req.user.id;
     await newNote.save(); // save the note
     req.flash("success_msg", "Note added successfully");
     res.redirect("/notes");
@@ -43,7 +44,7 @@ router.post("/notes/new-note", isAuthenticated, async (req, res) => {
 
 //get all the notes in the route /notes and then store the different notes in a constant variable called notes sorted and ordered by the date descrecing
 router.get("/notes", isAuthenticated, async (req, res) => {
-  const notes = await Note.find().lean().sort({ date: "desc" });
+  const notes = await Note.find({user: req.user.id}).lean().sort({ date: "desc" });
   console.log(notes);
   res.render("notes/all-notes", { notes });
 });

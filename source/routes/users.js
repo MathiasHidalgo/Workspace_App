@@ -53,20 +53,23 @@ router.post("/users/signup", async (req, res) => {
             errors.push({text: 'The username is alredy in use'})
             res.redirect('/users/signin')
         }*/
-    if ((userEmail = true)) {
+    if ((userEmail)) {
       req.flash("error_msg", "This email is alredy in use");
       res.redirect("/users/signup");
+    } else {
+      const newUser = new User({ name, email, password });
+      newUser.password = await newUser.encryptPassword(password);
+      await newUser.save();
+      req.flash("success_msg", "You're been registered");
+      res.redirect("/users/signin");
     }
-    const newUser = new User({ name, email, password });
-    newUser.password = await newUser.encryptPassword(password);
-    await newUser.save();
-    req.flash("success_msg", "You're been registered");
-    res.redirect("/users/signin");
   }
 });
 
-router.get("/user/logout", (req, res) => {
-  req.logout();
+router.get("/users/logout", (req, res) => {
+  req.logout(req.user, (err) => {
+    if (err) return next(err);
+  });
   res.redirect("/");
 });
 
