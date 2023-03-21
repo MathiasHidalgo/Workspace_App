@@ -5,12 +5,11 @@
                 {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
             </h4>
             <p>{{ description }}</p>
-            <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+            <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST" class="form-notes">
                 <input type="hidden" name="_method" value="DELETE">
                 <button class="all-notes-delete-button" type="submit">Delete</button>
             </form>
         </div>
-        <a href="/notes/add" class="new-notes-button">Create a new one</a>
         {{else}}
             <div class="no-notes">
                 <h1>Hello {{user.name}}</h1>

@@ -32,7 +32,7 @@ body {
 
 .container{
     padding: 3.5rem;
-    margin: 0px 0px 90px 0px;
+    margin: 0px 0px 180px 0px;
 }
 
 .container h3, h4, p {
@@ -41,7 +41,7 @@ body {
     margin: 30px 0px;
 }
 
-.homepage, .about, .create-note, .edit-note{
+.homepage, .about{
     width: 50%;
     height: auto;
     padding: 2rem;
@@ -54,28 +54,49 @@ body {
     box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
 }
 
-.notes-form {
-    min-height: 20vh;
+.notes-header{
+  text-align: center;
+  background-color: transparent;
+  padding: 20px;
 }
 
-.notes-form > div {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+/* Form container */
+.edit-note, .create-note {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.notes-title, .notes-description {
-    width: 70%;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    font-size: 1.2rem;
-    border: none;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
-    font-family: sans-serif;
+/* Form input fields */
+.notes-title,
+.notes-description {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 18px;
 }
 
+/* Form button */
+.notes-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Form button hover effect */
+.notes-button:hover {
+  background-color: #3e8e41;
+}
 
 .button{
     display: flex;
@@ -119,41 +140,49 @@ body {
     cursor: pointer;
 }
 
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-dismissible {
+  padding-right: 4rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.close:hover {
+  color: #000;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
 .alert-danger {
-    background-color: #fd5959;
-    color: #000;
-    padding: 20px 40px;
-    min-width: 420px;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 18px;
-    border-radius: 15px;
-    border-left: 8px solid #dc2f2f;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
 }
 
-
-.alert-danger {
-    padding: 0 20px;
-    font-size: 18px;
-    color: #a21232;
-}
-
-.alert-danger {
-    padding: 10px;
-    background: #f83e4b;
-    position: relative;
-}
-
-.close-danger{
-    background-color: #a21232;
-    padding: 7px;
-    border: none;
-    color: #f83e4b;
-    border-radius: 7px;
-    position: relative;
-    left: 78%;
-    cursor: pointer;
-}
 
 .all-notes-container{
     display: grid;
@@ -172,12 +201,55 @@ body {
 }
 
 .all-notes-delete-button {
-  display: flex;
-  align-items: center;
+  position: relative;
+  display: block;
   margin: auto;
-  justify-content: center;
-  
- 
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+
+.all-notes-delete-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.all-notes-delete-button:hover:before {
+  left: 0;
+}
+
+.all-notes-delete-button:after {
+  content: 'X';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.all-notes-delete-button:hover {
+  background-color: #ff5555;
+}
+
+.all-notes-delete-button:hover:after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 .no-notes {
@@ -203,3 +275,137 @@ body {
 }
 
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 30px;
+    display: flex;
+  }
+  
+  .nav-links ul li {
+    margin-right: 20px;
+  }
+  
+  .nav-links ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-links ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content li {
+    padding: 10px;
+  }
+  
+  .dropdown-content li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .dropdown-content li:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+  .footer {
+    background: none;
+    bottom: 0;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+
+  .signup-form, .signin-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: transparent;
+  }
+  
+  .card {
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+  }
+  
+  .card-header {
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da;
+    background: transparent;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-signup {
+    display: block;
+    margin: auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-signup:hover {
+    background-color: #0069d9;
+  }
+  
